@@ -11,7 +11,6 @@ class DogBoard extends Component {
             newDogName: '',
             newDogBreed: '',
             newDogImage: '',
-            myLuckynumber: 9
         }
     }
     newDogNameFunction = (event) => {
@@ -39,9 +38,9 @@ class DogBoard extends Component {
             dogID: this.state.dogID + 1
         });
     }
-    deleteDogPosting = (event, id) =>{
+    deleteDogPosting = (event, id) => {
         // Find the id from the event 
-         console.log(id);
+        this.setState({dogs: this.state.dogs.delete(id)})
     }
 
     render () {
@@ -63,7 +62,6 @@ class DogBoard extends Component {
             <div>
                 <p>this is the dog board</p>
                 {allDogs}
-                {this.state.myLuckynumber}
                 {/* <p>Add a dog!</p> */}
                 <p>Enter Name:</p>
                 <input type="text" value={this.state.newDogName} onChange={this.newDogNameFunction}/>
