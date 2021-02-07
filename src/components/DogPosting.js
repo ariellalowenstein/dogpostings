@@ -9,7 +9,8 @@ class DogPosting extends Component {
         return (
             <div>
                 <p>{this.props.name}{this.props.bread}</p>
-                <img src={this.props.dogURL} alt='dog'/>
+                <img src={this.props.dogURL} alt='Dog'/>
+                <button onClick={(e)=>this.props.deleteDogPosting(e, this.props.id)}>Delete</button>
             </div>
         )
     }
